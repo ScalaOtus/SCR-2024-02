@@ -1,13 +1,9 @@
+import module1.list.incList
 import module1.{hof, type_system}
-
+import module1.list
 
 object Main {
 
-  def main(args: Array[String]): Unit = {
-    println("Hello, World!")
 
-    val f: String => Unit = hof.logRunningTime(hof.doomy)
-    f("ooops")
-  }
 }
 
