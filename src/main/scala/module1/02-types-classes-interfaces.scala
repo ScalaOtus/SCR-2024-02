@@ -100,6 +100,11 @@ object type_system {
    * длиной(length) и шириной(width), а также вычислять его периметр и площадь
    *
    */
+  class Rectangle private (val length: Int, val width: Int) {
+    def getP: Double = (length + width) * 2
+    def getS: Double = length * width
+//    def this(length: Int, width: Int) = this(length, width)
+  }
 
 
   /**
@@ -109,6 +114,10 @@ object type_system {
    * 2. Ленивая инициализация
    * 3. Могут быть компаньоны
    */
+  object Rectangle {
+    def fromSide(side: Int): Rectangle = new Rectangle(side * 2, side)
+    def from(length: Int, width: Int): Rectangle = new Rectangle(length, width)
+  }
 
 
   /**
