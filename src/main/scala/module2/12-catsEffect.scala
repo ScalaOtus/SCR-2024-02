@@ -62,6 +62,9 @@ object A{
 
 object toyCatsEffect {
 
+  // R => Either[E, A]
+  case class ZIO[-R, +E, +A](run: R => Either[E, A])
+
   case class IO[+A](run: () => A){
 
     def map[B](f: A => B): IO[B] = flatMap(a => IO.delay(f(a)))
